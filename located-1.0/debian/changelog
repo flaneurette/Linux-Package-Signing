@@ -1,0 +1,5 @@
+located (1.0-2) unstable; urgency=medium
+
+  * Cleaned up install paths, removed directories from install list
+
+ -- flaneurette <info@flaneurette.com>  Thu, 06 Feb 2026 12:00:00 +0000
