@@ -172,7 +172,7 @@ You should **not** see:
 located-1.0/debian/
 ```
 
-If you do — redo it.
+If you do - redo it.
 
 ---
 
@@ -190,7 +190,7 @@ This works **only if**:
 * orig tarball doesn’t exist yet
 * directory layout is correct
 
-I still recommend knowing the manual method — it’s transparent and portable.
+I still recommend knowing the manual method - it’s transparent and portable.
 
 ---
 
