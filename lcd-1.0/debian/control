@@ -1,12 +1,12 @@
-Source: located
+Source: lcd
 Section: utils
 Priority: optional
 Maintainer: flaneurette <info@flaneurette.com>
 Build-Depends: debhelper (>= 12)
 Standards-Version: 4.5.1
-Homepage: https://github.com/flaneurette/Located
+Homepage: https://github.com/flaneurette/LCD
 
-Package: located
+Package: lcd
 Architecture: all
 Depends: ${misc:Depends}
 Description: Quickly locate configuration files interactively

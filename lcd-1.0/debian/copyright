@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: located
-Source: https://github.com/flaneurette/Located
+Upstream-Name: lcd
+Source: https://github.com/flaneurette/LCD
 
 Files: *
 Copyright: 2026 flaneurette <info@flaneurette.com>
