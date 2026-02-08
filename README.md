@@ -1,6 +1,6 @@
 # Packaging, Signing, and Uploading a .deb Package
 
-This guide uses the **Located** tool as an example.
+This guide uses the **lcd** tool as an example.
 
 `su - flaneurette`
 
@@ -11,9 +11,9 @@ This guide uses the **Located** tool as an example.
 Directory structure:
 
 ```
-located-1.1/
-├── located          program
-├── located.1        man page
+lcd-1.1/
+├── lcd          program
+├── lcd.1        man page
 └── debian/
 
 ```
@@ -23,13 +23,13 @@ located-1.1/
 From `~/sources`:
 
 ```sh
-tar --exclude-vcs --exclude=debian -czf located_1.1.orig.tar.gz located-1.1
+tar --exclude-vcs --exclude=debian -czf lcd_1.1.orig.tar.gz lcd-1.1
 ```
 
 Build the `.deb` locally:
 
 ```bash
-dpkg-deb --build located-1.0
+dpkg-deb --build lcd-1.0
 ```
 
 Or, for source packages:
@@ -45,7 +45,7 @@ debuild -S -sa -kB449A805B697AD1DACC829D2E58EC1824E443681
 ## Upload to your PPA
 
 ```bash
-dput ppa:flaneurette/located located_1.1-1_source.changes
+dput ppa:flaneurette/lcd lcd_1.1-1_source.changes
 ```
 
 Check that your signature is valid and the upload completes.
@@ -55,9 +55,9 @@ Check that your signature is valid and the upload completes.
 ## Install from PPA (once built by Launchpad)
 
 ```bash
-sudo add-apt-repository ppa:flaneurette/located
+sudo add-apt-repository ppa:flaneurette/lcd
 sudo apt update
-sudo apt install located
+sudo apt install lcd
 ```
 
 ---
@@ -73,7 +73,7 @@ Tips:
 ## Sign the package (if using `debsign` separately)
 
 ```bash
-debsign -kB449A805B697AD1DACC829D2E58EC1824E443681 located_1.1-1_source.changes
+debsign -kB449A805B697AD1DACC829D2E58EC1824E443681 lcd_1.1-1_source.changes
 ```
 
 This creates a **signed `.changes` file** for Launchpad.
@@ -84,9 +84,9 @@ This creates a **signed `.changes` file** for Launchpad.
 
 Assume:
 
-* upstream name: `located`
+* upstream name: `lcd`
 * upstream version: `1.0`
-* source directory: `located-1.0/`
+* source directory: `lcd-1.0/`
 * **no `debian/` directory inside** (important)
 
 ### Make sure the source tree is clean
@@ -97,7 +97,7 @@ From **outside** the directory:
 cd ~/sources
 ```
 
-Inside `located-1.0/`, you should have:
+Inside `lcd-1.0/`, you should have:
 
 * source code
 * README, LICENSE, etc.
@@ -107,7 +107,7 @@ Inside `located-1.0/`, you should have:
 If `debian/` exists, move it out temporarily:
 
 ```sh
-mv located-1.0/debian .
+mv lcd-1.0/debian .
 ```
 
 ---
@@ -117,7 +117,7 @@ mv located-1.0/debian .
 From `~/sources`:
 
 ```sh
-tar --exclude-vcs -czf located_1.0.orig.tar.gz located-1.0
+tar --exclude-vcs -czf lcd_1.0.orig.tar.gz lcd-1.0
 ```
 
 That’s it.
@@ -125,7 +125,7 @@ That’s it.
 This produces exactly what Debian expects:
 
 ```
-located_1.0.orig.tar.gz
+lcd_1.0.orig.tar.gz
 ```
 
 ---
@@ -133,7 +133,7 @@ located_1.0.orig.tar.gz
 ### Put `debian/` back
 
 ```sh
-mv debian located-1.0/
+mv debian lcd-1.0/
 ```
 
 Now you have:
@@ -164,13 +164,13 @@ Keeping them separate is the whole point.
 You can inspect the tarball:
 
 ```sh
-tar tzf located_1.0.orig.tar.gz | head
+tar tzf lcd_1.0.orig.tar.gz | head
 ```
 
 You should **not** see:
 
 ```
-located-1.0/debian/
+lcd-1.0/debian/
 ```
 
 If you do - redo it.
@@ -197,8 +197,8 @@ I still recommend knowing the manual method - it’s transparent and portable.
 
 ## Naming rules (burn these into muscle memory)
 
-* Directory: `located-1.0/`
-* Tarball: `located_1.0.orig.tar.gz`
+* Directory: `lcd-1.0/`
+* Tarball: `lcd_1.0.orig.tar.gz`
 * Version must match **exactly**
 
 Hyphen in dir name → underscore in tarball name.
