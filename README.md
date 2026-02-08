@@ -42,17 +42,7 @@ debuild -S -sa -kB449A805B697AD1DACC829D2E58EC1824E443681
 
 ---
 
-## 2. Sign the package (if using `debsign` separately)
-
-```bash
-debsign -kB449A805B697AD1DACC829D2E58EC1824E443681 located_1.1-1_source.changes
-```
-
-This creates a **signed `.changes` file** for Launchpad.
-
----
-
-## 3. Upload to your PPA
+## Upload to your PPA
 
 ```bash
 dput ppa:flaneurette/located located_1.1-1_source.changes
@@ -62,7 +52,7 @@ Check that your signature is valid and the upload completes.
 
 ---
 
-## 4. Install from PPA (once built by Launchpad)
+## Install from PPA (once built by Launchpad)
 
 ```bash
 sudo add-apt-repository ppa:flaneurette/located
@@ -77,6 +67,16 @@ Tips:
 * Always use the **full GPG fingerprint** to avoid short key issues.
 * Ensure your `DEBIAN/control` file and directory structure are correct.
 * Launchpad may take a few minutes to build the `.deb` from your source package.
+
+---
+
+## Sign the package (if using `debsign` separately)
+
+```bash
+debsign -kB449A805B697AD1DACC829D2E58EC1824E443681 located_1.1-1_source.changes
+```
+
+This creates a **signed `.changes` file** for Launchpad.
 
 ---
 
