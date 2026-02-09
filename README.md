@@ -32,9 +32,10 @@ lcd-1.2/
 
 Install:
 ```
-lcd        usr/bin/
-lcd.1      usr/share/man/man1/
-modes/*    usr/share/lcd/modes/
+lcd              usr/bin/
+lcd.1            usr/share/man/man1/
+modes/*          usr/share/lcd/modes/
+debian/lcd.conf  etc/lcd/
 ```
 
 Test:
