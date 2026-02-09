@@ -15,7 +15,41 @@ lcd-1.1/
 ├── lcd          program
 ├── lcd.1        man page
 └── debian/
+```
 
+New:
+
+```
+lcd-1.2/
+├── lcd
+├── lcd.1
+├── modes/
+│   ├── logs.sh
+│   ├── certs.sh
+│   └── services.sh
+└── debian/
+```
+
+Install:
+```
+lcd        usr/bin/
+lcd.1      usr/share/man/man1/
+modes/*    usr/share/lcd/modes/
+```
+
+Test:
+
+```
+dpkg-buildpackage -us -uc
+sudo dpkg -i ../lcd_1.1_all.deb
+lcd --help
+man lcd
+```
+
+Then:
+
+```
+lintian ../lcd_1.1_all.deb
 ```
 
 ### Create the orig tarball
