@@ -1,5 +1,18 @@
 # For update:
 
+```
+#### For jammy
+dch -v 1.0-0~jammy "Package for Ubuntu 22.04"
+#### change noble to jammy in changelog
+debuild -S -sa -kYOURKEY
+dput ppa:flaneurette/smash smash_1.0-0~jammy_source.changes
+
+#### For focal
+dch -v 1.0-0~focal "Package for Ubuntu 20.04"
+debuild -S -sa -kYOURKEY
+dput ppa:flaneurette/smash smash_1.0-0~focal_source.changes
+```
+
 #### Update your files in the main folder
 
 #### Then create new tarball
