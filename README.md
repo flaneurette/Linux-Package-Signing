@@ -1,5 +1,26 @@
 # For update:
 
+New version;
+
+```
+# Fix the file first
+sed -i 's/\r//' smash
+
+# Create new tarball
+cd ~/smash
+tar czf smash_1.2.orig.tar.gz --exclude=smash-1.2/debian smash-1.2/
+
+# Bump version
+cd smash-1.2
+dch -v 1.2-0 "Fix float typecasting and clean output improvements"
+
+# Build and upload
+debuild -S -sa -kYOURKEY
+dput ppa:flaneurette/smash smash_1.2-0_source.changes
+```
+
+# Update:
+
 ```
 # Fix line endings
 sed -i 's/\r//' smash
