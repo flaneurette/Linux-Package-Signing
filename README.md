@@ -1,7 +1,6 @@
 # For update:
 
 ```
-
 # Fix line endings
 sed -i 's/\r//' smash
 
@@ -18,6 +17,8 @@ dch -v 1.0-1 "Fix Windows line endings"
 # Build and upload
 debuild -S -sa -kYOURKEY
 dput ppa:flaneurette/smash smash_1.0-1_source.changes
+```
+
 ```
 #### For jammy
 dch -v 1.0-0~jammy "Package for Ubuntu 22.04"
