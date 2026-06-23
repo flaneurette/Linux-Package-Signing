@@ -343,3 +343,42 @@ Think of `orig.tar.gz` as:
 No distro stuff. No patches. Just the code.
 
 ---
+
+1. Generate a new GPG key:
+gpg --full-generate-key
+
+Choose RSA and RSA (default)
+4096 bits (recommended)
+Valid for 1-2 years (or your preference)
+Use your info@flaneurette.com email
+Set a strong passphrase you'll remember this time! 😉
+
+2. List your keys to find the new key ID:
+gpg --list-secret-keys --keyid-format LONG
+Look for output like:
+sec   rsa4096/ABCD1234EFGH5678 2026-06-23 [SC]
+      ABCDEF1234567890ABCDEF1234567890ABCDEF12
+uid                 [ultimate] flaneurette <info@flaneurette.com>
+ssb   rsa4096/9876WXYZ5432VUTS 2026-06-23 [E]
+3. Export the new public key:
+gpg --armor --export ABCD1234EFGH5678 > ~/smash-ppa-key.asc
+4. Update your PPA:
+
+Upload the new smash-ppa-key.asc to your Launchpad PPA
+Update any references in your packaging files
+
+5. Clean up the old key:
+gpg --delete-secret-key OLD_KEY_ID
+gpg --delete-key OLD_KEY_ID
+
+
+
+
+
+
+
+
+
+
+
+
