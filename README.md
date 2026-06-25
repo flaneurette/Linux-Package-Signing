@@ -2,7 +2,9 @@
 
 ```
 tar --exclude-vcs --exclude=debian -czf smash_1.3.orig.tar.gz smash-1.3
-debuild -S -sa -kB449A805B697AD1DACC829D2E58EC1824E443681
+cd smash-1.3
+debuild -S -sa -kD820A9F1F6945B042A63B50A2704A1EA4E14F1BB
+cd ../
 dput ppa:flaneurette/smash smash_1.3-0_source.changes
 ```
 
