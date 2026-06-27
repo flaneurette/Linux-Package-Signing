@@ -38,7 +38,7 @@ incoming = ~flaneurette/ubuntu/smash
 login = flaneurette
 ```
 
-Generate a new GPG key to decrypt launchpad/ubuntu messages:
+### Generate a new GPG key to decrypt launchpad/ubuntu messages:
 
 ```
 gpg --full-generate-key
@@ -63,7 +63,7 @@ gpg --decrypt --output decrypted_file.txt encrypted_message.asc
 ```
 
 
-Generate launchpad SSH key (for upload, not signing/decrypting PGP/GPG):
+### Generate launchpad SSH key (for upload, not signing/decrypting PGP/GPG):
 
 ```
 sudo apt-get install openssh-client
