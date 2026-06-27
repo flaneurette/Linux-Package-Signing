@@ -1,5 +1,12 @@
 Simple steps for packgae creation, signing and uploading to ppa.launchpad.net.
 
+*Remember* to change your public key fingerprints, and shorthand (sub) key.
+
+Mine are:
+
+- EE274F961CF4A8143BC68EEFB240191A0B2B7B8C
+- B240191A0B2B7B8C
+
 # For update:
 
 ```
