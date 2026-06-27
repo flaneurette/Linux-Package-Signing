@@ -2,17 +2,17 @@ Simple steps for package creation, signing and uploading to ppa.launchpad.net.
 
 *Remember* to change your public key fingerprints, and shorthand (sub) key.
 
-Mine are:
+Mine are for demo purposes:
 
-- EE274F961CF4A8143BC68EEFB240191A0B2B7B8C
-- B240191A0B2B7B8C
+- ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- KLMNOPQRSTUVWXYZ
 
 # For update:
 
 ```
 tar --exclude-vcs --exclude=debian -czf smash_1.3.orig.tar.gz smash-1.3
 cd smash-1.3
-debuild -S -sa -kEE274F961CF4A8143BC68EEFB240191A0B2B7B8C
+debuild -S -sa -kABCDEFGHIJKLMNOPQRSTUVWXYZ
 cd ../
 dput -c ~/.dput.cf smash_1.3-0_source.changes
 ```
@@ -63,7 +63,7 @@ gpg --list-secret-keys --keyid-format LONG
 Export the new public key:
 
 ```
-gpg --export --armor B240191A0B2B7B8C > public_key.asc
+gpg --export --armor KLMNOPQRSTUVWXYZ > public_key.asc
 ```
 
 Decrypt Launchpad PGP message:
