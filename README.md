@@ -1,3 +1,5 @@
+Simple steps for packgae creation, signing and uploading to ppa.launchpad.net.
+
 # For update:
 
 ```
@@ -10,7 +12,6 @@ dput ppa:flaneurette/smash smash_1.3-0_source.changes
 or:
 
 dput -c ~/.dput.cf  smash_1.3-0_source.changes
-
 ```
 
 nano ~/.dput.cf
