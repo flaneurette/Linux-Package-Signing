@@ -6,6 +6,11 @@ cd smash-1.3
 debuild -S -sa -kD820A9F1F6945B042A63B50A2704A1EA4E14F1BB
 cd ../
 dput ppa:flaneurette/smash smash_1.3-0_source.changes
+
+or:
+
+dput -c ~/.dput.cf  smash_1.3-0_source.changes
+
 ```
 
 Generate a new GPG key:
