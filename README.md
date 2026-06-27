@@ -17,8 +17,6 @@ dput -c ~/.dput.cf  smash_1.3-0_source.changes
 nano ~/.dput.cf
 
 ```
-nano ~/.dput.cf
-
 [DEFAULT]
 # Default settings (applies to all uploads)
 fqdn = upload.debian.org
@@ -40,7 +38,7 @@ incoming = ~flaneurette/ubuntu/smash
 login = flaneurette
 ```
 
-Generate a new GPG key:
+Generate a new GPG key to decrypt launchpad/ubuntu messages:
 
 ```
 gpg --full-generate-key
@@ -62,4 +60,20 @@ Decrypt Launchpad PGP message:
 
 ```
 gpg --decrypt --output decrypted_file.txt encrypted_message.asc
+```
+
+
+Generate launchpad SSH key (for upload, not signing/decrypting PGP/GPG):
+
+```
+sudo apt-get install openssh-client
+
+ssh-keygen -a 100 -t ed25519
+
+Public key:
+nano /home/<user>/.ssh/id_ed25519.pub
+
+Private key:
+cd /home/<user>/.ssh/
+nano id_ed25519
 ```
