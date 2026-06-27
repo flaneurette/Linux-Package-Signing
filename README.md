@@ -1,4 +1,4 @@
-Simple steps for packgae creation, signing and uploading to ppa.launchpad.net.
+Simple steps for package creation, signing and uploading to ppa.launchpad.net.
 
 *Remember* to change your public key fingerprints, and shorthand (sub) key.
 
