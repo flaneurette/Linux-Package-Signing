@@ -13,6 +13,32 @@ dput -c ~/.dput.cf  smash_1.3-0_source.changes
 
 ```
 
+nano ~/.dput.cf
+
+```
+nano ~/.dput.cf
+
+[DEFAULT]
+# Default settings (applies to all uploads)
+fqdn = upload.debian.org
+method = ftp
+incoming = ftp-master
+login = anonymous
+
+[ppa.launchpad.net]
+fqdn = ppa.launchpad.net
+method = sftp
+incoming = ~flaneurette/ubuntu/smash
+login = flaneurette
+ssh_config_options = StrictHostKeyChecking=no
+
+[ftp-master]
+fqdn = ppa.launchpad.net
+method = sftp
+incoming = ~flaneurette/ubuntu/smash
+login = flaneurette
+```
+
 Generate a new GPG key:
 
 ```
