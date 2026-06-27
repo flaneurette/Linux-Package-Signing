@@ -14,11 +14,7 @@ tar --exclude-vcs --exclude=debian -czf smash_1.3.orig.tar.gz smash-1.3
 cd smash-1.3
 debuild -S -sa -kEE274F961CF4A8143BC68EEFB240191A0B2B7B8C
 cd ../
-dput ppa:flaneurette/smash smash_1.3-0_source.changes
-
-or:
-
-dput -c ~/.dput.cf  smash_1.3-0_source.changes
+dput -c ~/.dput.cf smash_1.3-0_source.changes
 ```
 
 nano ~/.dput.cf
@@ -32,6 +28,13 @@ incoming = ftp-master
 login = anonymous
 
 [ppa.launchpad.net]
+fqdn = ppa.launchpad.net
+method = sftp
+incoming = ~flaneurette/ubuntu/smash
+login = flaneurette
+ssh_config_options = StrictHostKeyChecking=no
+
+[ppa:flaneurette/smash]
 fqdn = ppa.launchpad.net
 method = sftp
 incoming = ~flaneurette/ubuntu/smash
