@@ -29,6 +29,8 @@ cd ../
 dput -c upload:smash smash_1.3-0_source.changes
 ```
 
+TIP: `upload` only works for this custom dput config file.
+
 ### Generate a new GPG key to decrypt launchpad/ubuntu messages:
 
 ```
