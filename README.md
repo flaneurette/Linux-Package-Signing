@@ -20,32 +20,10 @@ dput -c ~/.dput.cf smash_1.3-0_source.changes
 nano ~/.dput.cf
 
 ```
-[ppa.launchpad.net]
+[upload]
 fqdn = ppa.launchpad.net
 method = sftp
-incoming = ~flaneurette/ubuntu/smash
-login = flaneurette
-# ssh_config_options = StrictHostKeyChecking=no
-
-[ppa:flaneurette/lcd]
-fqdn = ppa.launchpad.net
-method = sftp
-incoming = ~flaneurette/ubuntu/lcd
-login = flaneurette
-# ssh_config_options = StrictHostKeyChecking=no
-
-[ppa:flaneurette/smash]
-fqdn = ppa.launchpad.net
-method = sftp
-incoming = ~flaneurette/ubuntu/smash
-login = flaneurette
-# ssh_config_options = StrictHostKeyChecking=no
-
-# Somehow this was needed to avoid 110 timeout messages?!? not sure why...
-[ftp-master]
-fqdn = ppa.launchpad.net
-method = sftp
-incoming = ~flaneurette/ubuntu/smash
+incoming = ~flaneurette/ubuntu/%(upload)s
 login = flaneurette
 ```
 
